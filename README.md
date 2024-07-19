@@ -4,16 +4,18 @@
 ### To use this HTR pipeline, please set up Apptainer and NVDIA-related environments.
 
 Clone this repo into your local machine, then download SIF files, PTH file and HTR models and put them into the repo root directory.
-You may choose one of the models, and put the entire folder into the root directory (The model named output_all_with_finetune is recommended to use).
+You may choose one of the models, and put the entire "best_val" folder into the root directory (The model named output_all_with_finetune is recommended to use).
 
 ### To create your own training/validation set, please use apptainer-create-new.sh. Type "sh PATH_TO_THIS_SHELL_SCRIPT PATH_TO_YOUR_IMAGES OUTPUT_DIRCTORY"
-#### All your PageXML files should be stored in a folder called "page" under the PATH_TO_YOUR_IMAGES.
+All your PageXML files should be stored in a folder called "page" under the PATH_TO_YOUR_IMAGES.
 
 ### To train your own model, please use apptainer-train.sh. Type "sh PATH_TO_THIS_SHELL_SCRIPT"
-#### Most of the arguments should be setup inside the shell script.
+Most of the arguments should be setup inside the shell script.
 
 ### To make inference (test), please use apptainer-pipe.sh. Type "sh PATH_TO_THIS_SHELL_SCRIPT PATH_TO_YOUR_IMAGES"
-#### All the predicted PageXML files should be stored in a folder called "page" under the PATH_TO_YOUR_IMAGES.
+All the predicted PageXML files should be stored in a folder called "page" under the PATH_TO_YOUR_IMAGES.
+In config.yaml, you may find two entries MAX_SIZE_TEST and MIN_SIZE_TEST. When dealing with large images, you may need to adjust these two values to a higer value, and vice versa.
+1536 for MAX_SIZE_TEST and 768 for MIN_SIZE_TEST are recommended for pictures taken by popular mobiles and cameras.
 
 
 ### Folder strcture

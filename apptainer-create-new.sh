@@ -10,14 +10,15 @@ else
         echo "setting numthreads=$numthreads"
 fi;
 
-#directory containing images and pagexml. The pageXML must be one level deeper than the images in a directory called "page"
+# Directory containing images and pagexml. The PageXMLs must be one level deeper than the images in a directory called "page"
 mkdir -p $2
 inputdir=$(realpath $1/)
 outputdir=$(realpath $2/)
 filelist=$outputdir/training_all.txt
 filelisttrain=$outputdir/training_all_train.txt
 filelistval=$outputdir/training_all_val.txt
-#90 percent for training
+
+# Train/Val split. 90 percent for training
 trainsplit=90
 DOCKERLOGHITOOLING=loghi/docker.loghi-tooling:$VERSION
 INCLUDETEXTSTYLES=" -include_text_styles " # translate the text styles defined in transkribus to loghi htr training data with text styles
@@ -32,10 +33,6 @@ echo $filelistval
 find $inputdir -name '*.done' -exec rm {} \;
 
 echo "inputfiles: " `find $inputdir|wc -l`
-
-
-#echo /home/rutger/src/opencvtest2/agenttesseract/target/appassembler/bin/MinionCutFromImageBasedOnPageXMLNew -input_path $inputdir -outputbase $outputdir -channels 4 -output_type png -write_text_contents -threads $numthreads
-#/home/rutger/src/opencvtest2/agenttesseract/target/appassembler/bin/MinionCutFromImageBasedOnPageXMLNew -input_path $inputdir -outputbase $outputdir -channels 4 -output_type png -write_text_contents -threads $numthreads
 
 apptainer run tool.sif \
   /src/loghi-tooling/minions/target/appassembler/bin/MinionCutFromImageBasedOnPageXMLNew -input_path $inputdir -outputbase $outputdir -channels 4 -output_type png -write_text_contents -threads $numthreads $INCLUDETEXTSTYLES -no_page_update $SKIP_UNCLEAR -use_2013_namespace

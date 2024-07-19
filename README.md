@@ -38,3 +38,5 @@
                         -app.py
 
 ### To visulize the result, please use flask. Type "python app.py" under the flask folder.
+
+#### .sif files, .pth files and HTR models are available to download at the following links.

@@ -14,9 +14,12 @@
 
 
 ### Folder strcture
-#### Project_folder
+-Project_folder
         -laypa folder
         -HTR model folder (best_val_nov30)
+                -charlist.txt
+                -config.json
+                -model.keras
         -apptainer-create-new.sh
         -apptainer-train.sh
         -apptainer-pipe.sh

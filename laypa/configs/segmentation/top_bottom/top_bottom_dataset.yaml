@@ -1,0 +1,26 @@
+_BASE_: ../segmentation_base.yaml
+
+OUTPUT_DIR: ./output/top_bottom
+
+PREPROCESS:
+  BASELINE:
+    LINE_WIDTH: 15
+
+MODEL:
+  MODE: top_bottom
+
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 3
+
+  WEIGHTS:
+
+INPUT:
+  ORIENTATION:
+    PROBABILITY: 1.0
+    PERCENTAGES: (0.25, 0.25, 0.25, 0.25)
+
+TRAIN:
+  WEIGHTS:
+
+TEST:
+  WEIGHTS:

@@ -3,6 +3,9 @@
 ## Setup
 ### To use this HTR pipeline, please set up Apptainer and NVDIA-related environments.
 
+Clone this repo into your local machine, then download SIF files, PTH file and HTR models and put them into the repo root directory.
+You may choose one of the models, and put the entire folder into the root directory (The model named output_all_with_finetune is recommended to use).
+
 ### To create your own training/validation set, please use apptainer-create-new.sh. Type "sh PATH_TO_THIS_SHELL_SCRIPT PATH_TO_YOUR_IMAGES OUTPUT_DIRCTORY"
 #### All your PageXML files should be stored in a folder called "page" under the PATH_TO_YOUR_IMAGES.
 

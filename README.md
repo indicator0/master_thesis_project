@@ -39,4 +39,8 @@
 
 ### To visulize the result, please use flask. Type "python app.py" under the flask folder.
 
-#### .sif files, .pth files and HTR models are available to download at the following links.
+#### .sif files, .pth file and HTR models are available to download at the following links.
+
+##### SIF files: https://1drv.ms/f/s!AhLc1l9ln_Uug-5MWa5ElHAlSCzeaQ?e=MyU546
+##### PTH file: https://1drv.ms/u/s!AhLc1l9ln_Uug9wag9FqW8u9h2HaIw?e=pdecqO
+##### HTR models: https://1drv.ms/f/s!AhLc1l9ln_Uug9w4eeSPAcwlQqXiQQ?e=RBeIgl

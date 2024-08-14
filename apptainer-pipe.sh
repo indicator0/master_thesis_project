@@ -140,13 +140,11 @@ then
        find $tmpdir/imagesnippets/ -type f -name '*.png' > $tmpdir/lines.txt
 
 	LOGHIDIR="$(dirname "${HTRLOGHIMODEL}")"
-        # CUDA_VISIBLE_DEVICES=-1 python3 ~/src/htr/src/main.py --do_inference --channels 4 --height $HTR_LOGHI_MODEL_HEIGHT --existing_model ~/src/htr/$HTR_LOGHI_MODEL  --batch_size 32 --use_mask --inference_list $tmpdir/lines.txt --results_file $tmpdir/results.txt --charlist ~/src/htr/$HTR_LOGHI_MODEL.charlist --gpu $GPU
-#        apptainer run $DOCKERGPUPARAMS --rm -m 32000m --shm-size 10240m -ti -v $tmpdir:$tmpdir docker.htr python3 /src/src/main.py --do_inference --channels 4 --height $HTRLOGHIMODELHEIGHT --existing_model /src/loghi-htr-models/$HTRLOGHIMODEL  --batch_size 10 --use_mask --inference_list $tmpdir/lines.txt --results_file $tmpdir/results.txt --charlist /src/loghi-htr-models/$HTRLOGHIMODEL.charlist --gpu $GPU --output $tmpdir/output/ --config_file_output $tmpdir/output/config.txt --beam_width 10
+
+        
         # Initialize Loghi-HTR
         # Some of the arguments are not listed here, but they might be useful.
 
-        # --optimizer: Optimizer to use, default is adam
-        # --seed: Seed for random number generator, default is 42
         # --channels: Number of channels in the input image, default is 3. If set to 1, some other changes are required.
         # --decay_steps and --decay_rate: Learning rate decay, default is 0.99 and -1 (no decay). These are in beta stage.
         # --use_float32: Use float32 instead of float16, default is float16 for training.

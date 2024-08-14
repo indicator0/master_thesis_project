@@ -11,7 +11,7 @@ HTRBASEMODEL=/proj/berzelius-2024-46/users/x_zhyan/loghi/generic-2023-02-15
 #set to 1 to actually use basemodel, 0 to not use basemodel
 USEBASEMODEL=1
 
-# Define a VGSL model
+# Define a VGSL model. If this is changed, you have to retrain the model from scratch other than finetuning.
 HTRNEWMODEL="None,64,None,3 Cr3,3,24 Bn Mp2,2,2,2 Cr3,3,48 Bn Mp2,2,2,2 Cr3,3,96 Bn Cr3,3,96 Bn Mp2,2,2,2 Rc Bl256 Bl256 Bl256 Bl256 Bl256 O1s92"
 # Set channels to 1 to process input as grayscale, 3 for color, 4 for color and mask
 channels=4
@@ -31,6 +31,8 @@ datadir=./scratch/republicprint
 charlist=/proj/berzelius-2024-46/users/x_zhyan/loghi/generic-2023-02-15/charlist.txt
 
 # Training configuration
+
+# 40 epochs is a good starting point for trainng from scratch, 15 for transfer learning, 7-10 for finetuning.
 epochs=10
 height=$HTRLOGHIMODELHEIGHT
 multiply=1

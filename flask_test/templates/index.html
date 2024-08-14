@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTR Visualizer</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .image-container {
+            width: 66.66%;  /* 左侧2/3区域 */
+            padding: 20px;
+            position: fixed;  /* 图片区域固定 */
+            top: 0;  /* 图片区域距离顶部距离为0 */
+            left: 0;  /* 图片区域距离左侧距离为0 */
+            bottom: 0;  /* 图片区域距离底部距离为0 */
+            overflow: hidden;  /* 隐藏超出容器范围的部分 */
+            z-index: 1;  /* 图片区域层级高于文本区域 */
+        }
+        .text-container {
+            width: 33.33%;  /* 右侧1/3区域 */
+            padding: 20px;
+            margin-left: 56.66%;  /* 文本区域的左侧距离等于图片区域的宽度 */
+            overflow-y: auto;  /* 文本区域垂直滚动 */
+            height: 100vh;  /* 文本区域高度等于浏览器窗口高度 */
+        }
+        .image {
+            width: auto;  /* 自适应宽度 */
+            height: auto;  /* 自适应高度 */
+            max-width: 100%;  /* 图片最大宽度为容器宽度 */
+            max-height: 100%;  /* 图片最大高度为容器高度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img class="image" src="{{ image_path }}" alt="Image">
+        </div>
+        <div class="text-container">
+            <pre>{{ text_content }}</pre>
+        </div>
+    </div>
+</body>
+</html>

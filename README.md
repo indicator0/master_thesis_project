@@ -37,12 +37,13 @@ In config.yaml, you may find two entries MAX_SIZE_TEST and MIN_SIZE_TEST. When d
 
 ### There are some auxiliary files that are not directly related to the HTR pipeline, but are important for result analysis.
         -compare.py (for comparing the results between two HTR models)
-        -flask (for running a web server to visualize the results)
+        -flask_test (for running a web server to visualize the results)
                         -static
                         -templates
                         -app.py
 
 ### To visulize the result, please use flask. Type "python app.py" under the flask folder.
+Image input and result xml input directory are hard coded in app.py. You may need to change the directory in the code.
 
 #### .sif files, .pth file and HTR models are available to download at the following links.
 

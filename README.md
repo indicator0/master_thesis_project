@@ -44,9 +44,15 @@ In config.yaml, you may find two entries MAX_SIZE_TEST and MIN_SIZE_TEST. When d
 
 ### To visulize the result, please use flask. Type "python app.py" under the flask folder.
 Image input and result xml input directory are hard coded in app.py. You may need to change the directory in the code.
+After running this, it should start a web server on your local machine. You can access the web page by typing "http://127.0.0.1:5001/" in your browser by default.
+
+Below is an example of the output of the visualization.
+![alt text](./flask_test/static/output.png "Example output")
 
 #### .sif files, .pth file and HTR models are available to download at the following links.
 
 ##### SIF files: https://1drv.ms/f/s!AhLc1l9ln_Uug-5MWa5ElHAlSCzeaQ?e=MyU546
 ##### PTH file: https://1drv.ms/u/s!AhLc1l9ln_Uug9wag9FqW8u9h2HaIw?e=pdecqO
 ##### HTR models: https://1drv.ms/f/s!AhLc1l9ln_Uug9w4eeSPAcwlQqXiQQ?e=RBeIgl
+
+An example of the output of the HTR pipeline is provided in the "test_set_mini" folder. The output is stored in the "page" folder.

@@ -30,7 +30,8 @@ def get_lines(xml_file):
         all_text.append('\n')
     return all_coords, all_text
 
-xml_file = "/Users/waldo/Library/CloudStorage/OneDrive-Personal/Master Thesis/Temporary_data/page_all/53_fac_03008_verksamhetsberattelse_1964_sid-03.xml"
+# Change the PageXML here
+xml_file = "./53_fac_03008_verksamhetsberattelse_1964_sid-03.xml"
 all_coords, all_text = get_lines(xml_file)
 txt_string = ''
 
@@ -41,6 +42,7 @@ txt_string = txt_string + 'Predicted lines end with * suggests that the \nmodel 
 
 from PIL import Image, ImageDraw, ImageFont
 
+# Draw the red shadow below the text areas
 def draw_rectangular_area(idx, img, coordinates, opacity, color):
     text = "Region " + str(idx+1)
     #color = color[idx%3]
@@ -57,7 +59,8 @@ def draw_rectangular_area(idx, img, coordinates, opacity, color):
 
     return img
 
-image_path = "/Users/waldo/Library/CloudStorage/OneDrive-Personal/Master Thesis/Temporary_data/53_fac_03008_verksamhetsberattelse_1964_sid-03.jpg"
+# Change the input image here
+image_path = "./53_fac_03008_verksamhetsberattelse_1964_sid-03.jpg"
 coordinates = [(800, 2716), (3558,4006)]
 opacity = 0.1
 color = [(255, 0, 0),(0, 255, 0),(154, 100, 250)]
@@ -67,7 +70,7 @@ img = img.convert("RGBA")
 for idx, coord in  enumerate(all_coords):
     img = draw_rectangular_area(idx, img, [(int(coord.split(' ')[0].split(',')[0]),int(coord.split(' ')[0].split(',')[1])),(int(coord.split(' ')[2].split(',')[0]),int(coord.split(' ')[2].split(',')[1]))], opacity, color)
 #img.show()
-img.save('/Users/waldo/Documents/master thesis/flask_test/static/output.png')
+img.save('./static/output.png')
 
 
 

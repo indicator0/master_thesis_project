@@ -47,7 +47,7 @@ Image input and result xml input directory are hard coded in app.py. You may nee
 After running this, it should start a web server on your local machine. You can access the web page by typing "http://127.0.0.1:5001/" in your browser by default.
 
 Below is an example of the output of the visualization.
-![alt text](./flask_test/static/output.png "Example output")
+![alt text](./flask_test/sample.png "Example output")
 
 #### .sif files, .pth file and HTR models are available to download at the following links.
 
